@@ -28,6 +28,7 @@ const User = sequelize.define(
     sequelize,
     tableName: "users",
     timestamps: true,
+    updatedAt: false,
     indexes: [
       {
         name: "PRIMARY",
