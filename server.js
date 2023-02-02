@@ -10,5 +10,6 @@ const app = express();
 app.use(express.json({ extended: false }));
 
 app.use("/api/users", require("./routes/api/users"));
+app.use("/api/auth", require("./routes/api/auth"));
 
 app.listen(PORT, () => console.log(`Application running on PORT:${PORT}`));
