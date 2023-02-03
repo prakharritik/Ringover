@@ -50,10 +50,7 @@ const Filterbox = () => {
           <label for="type-checkbox-2">Sneaker</label>
         </div>
       </div>
-<<<<<<< HEAD
       <button className="apply_btn">Apply</button>
-=======
->>>>>>> 73685a2fdb9ee56fea27c543479a4663dd846bbc
     </div>
   );
 };
