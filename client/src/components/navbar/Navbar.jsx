@@ -27,8 +27,8 @@ function Navbar() {
         }
       >
         <ul>
-          <li className={` ${pathname === "/home" ? "active" : null}`}>
-            <a href="/home">HOME</a>
+          <li className={` ${pathname === "/" ? "active" : null}`}>
+            <a href="/">HOME</a>
           </li>
           <li className={` ${pathname === "/journey" ? "active" : null}`}>
             <a href="/journey">THE JOURNEY</a>
