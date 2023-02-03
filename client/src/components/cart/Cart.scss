@@ -1,0 +1,29 @@
+.Cart {
+  padding: 30px;
+  display: flex;
+  height: 90%;
+  justify-content: space-between;
+  flex-direction: column;
+  .cart_items {
+    p {
+      text-align: center;
+    }
+  }
+  .order_details {
+    display: flex;
+    gap: 10px;
+    p {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      align-items: center;
+    }
+  }
+  .orderbtn {
+    background-color: #111;
+    color: #fff;
+    margin: auto;
+    display: block;
+    padding: 5px;
+  }
+}
