@@ -1,0 +1,64 @@
+.Filterbox {
+  padding: 30px;
+  .apply_btn {
+    background-color: #111;
+    color: #fff;
+    margin: auto;
+    display: block;
+    padding: 5px;
+  }
+  .sub_head {
+    font-size: 20px;
+  }
+  .container {
+    margin: 5px 0px;
+    font-size: 14px;
+    .checkbox {
+      display: none;
+
+      & + label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      // Box.
+      & + label:before {
+        content: "";
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 15px;
+        height: 15px;
+        background: white;
+        outline: solid 2px #111;
+      }
+
+      // Box hover
+
+      // Box focus
+      &:focus + label:before {
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+      }
+
+      // Box checked
+      &:checked + label:before {
+        background: #111;
+      }
+
+      // Checkmark. Could be replaced with an image
+      &:checked + label:after {
+        content: "";
+        position: absolute;
+        left: 3px;
+        top: 6px;
+        background: white;
+        width: 2px;
+        height: 2px;
+        box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white,
+          4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

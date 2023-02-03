@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Logo from "../../assets/logo.png";
+import { User } from "react-feather";
 import { useLocation } from "react-router-dom";
 import "./Navbar.scss";
 
@@ -46,7 +47,7 @@ function Navbar() {
 
         <div class="dropdown">
           <button class="dropbtn">
-            <i className="far fa-user"></i>
+            <User size={20} />
             GAGAN
           </button>
           <div class="dropdown-content">

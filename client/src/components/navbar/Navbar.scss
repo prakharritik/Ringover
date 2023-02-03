@@ -10,10 +10,9 @@
     background-color: inherit;
     margin: 0;
 
-    i {
-      font-size: 16px;
-      margin-right: 5px;
-    }
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
   }
 }
 
