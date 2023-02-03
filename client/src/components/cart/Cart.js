@@ -3,6 +3,7 @@ import "./Cart.scss";
 
 import Shoe from "../../assets/shoe.jpg";
 import { Calendar, MapPin, ShoppingBag } from "react-feather";
+import CartItem from "../cart-item/CartItem";
 
 const Cart = () => {
   return (
@@ -12,7 +13,11 @@ const Cart = () => {
         <ShoppingBag className="top_div_icon" />
       </div>
       <div className="cart_items">
-        <p>What's stopping you, designer?</p>
+        {/* <div className="empty_cart">
+          <p>What's stopping you, designer?</p>
+        </div> */}
+        <CartItem />
+        <CartItem />
       </div>
       <div>
         <div className="order_details">

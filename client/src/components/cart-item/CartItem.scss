@@ -1,0 +1,18 @@
+.cart-item {
+  display: flex;
+  img {
+    width: 50%;
+    margin: 5px;
+  }
+  .name,
+  .price {
+    font-size: 18px;
+  }
+  .brand {
+    font-size: 14px;
+  }
+  .removebtn {
+    position: absolute;
+    margin-left: -5px;
+  }
+}
