@@ -1,0 +1,24 @@
+.Item {
+  flex-grow: 1;
+  max-width: 30%;
+  img {
+    width: 100%;
+  }
+  .shoe_name {
+    font-size: 25px;
+    margin: 0;
+  }
+  .price_rating {
+    display: flex;
+    justify-content: space-between;
+    .shoe_price {
+      font-size: 15px;
+      margin: 0;
+    }
+
+    i {
+      font-size: 15px;
+      color: orange;
+    }
+  }
+}
