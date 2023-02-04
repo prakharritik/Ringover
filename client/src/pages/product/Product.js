@@ -8,6 +8,7 @@ import Pattern from "../../components/pattern/Pattern";
 import Size from "../../components/size/Size";
 import { NavLink, useParams } from "react-router-dom";
 import axios from "axios";
+import Loading from "../../components/loading/Loading";
 
 const Product = () => {
   const { id } = useParams();
@@ -91,7 +92,7 @@ const Product = () => {
             </div>
           </>
         ) : (
-          <p>Loading</p>
+          <Loading />
         )}
       </div>
       <div class="flex-items">

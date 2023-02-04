@@ -5,6 +5,7 @@ import Cart from "../../components/cart/Cart";
 import Filterbox from "../../components/filterbox/Filterbox";
 import Items from "../../components/items/Items";
 import "./Store.scss";
+import Loading from "../../components/loading/Loading";
 
 const Store = () => {
   const [items, setItems] = useState(null);
@@ -37,7 +38,7 @@ const Store = () => {
         />
       </div>
       <div class="flex-items">
-        {items ? <Items items={items} /> : <p>Loading</p>}
+        {items ? <Items items={items} /> : <Loading />}
       </div>
       <div class="flex-items">
         <Cart />
