@@ -13,6 +13,7 @@ import Journey from "./pages/journey/Journey";
 import Store from "./pages/store/Store";
 import Contact from "./pages/contact/Contact";
 import Team from "./pages/team/Team";
+import Product from "./pages/product/Product";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/store" element={<Store />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/team" element={<Team />} />
+          <Route exact path="/product" element={<Product />} />
         </Routes>
       </div>
     </Router>

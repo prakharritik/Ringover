@@ -1,0 +1,89 @@
+.Product {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  i {
+    color: orange;
+  }
+  .flex-items {
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(128, 128, 128, 0.43);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(128, 128, 128, 0.43);
+    box-shadow: 0px 0px 10px 2px rgba(128, 128, 128, 0.43);
+    .head_product {
+      display: flex;
+      align-items: center;
+      padding: 30px;
+      font-size: 25px;
+      gap: 20px;
+    }
+    &:nth-child(1) {
+      width: 250%;
+    }
+
+    .product_details {
+      display: flex;
+      padding: 0 8%;
+      gap: 20px;
+      .active_img {
+        width: 50%;
+
+        img {
+          width: 100%;
+        }
+      }
+      .imgs {
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        img {
+          width: 100%;
+        }
+      }
+      .details {
+        .name {
+          font-size: 20px;
+          margin: 0;
+        }
+        .brand {
+          font-size: 15px;
+          margin: 0;
+          margin-bottom: 20px;
+        }
+        .rating {
+        }
+        .reviews {
+          font-size: 12px;
+          margin: 0;
+          margin-bottom: 20px;
+        }
+        .price {
+          font-size: 15px;
+          margin: 0;
+        }
+        .offer {
+          font-size: 10px;
+          margin: 0;
+        }
+      }
+    }
+    .rate_form {
+      margin-left: 80px;
+    }
+    .btn_section {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+      .btn-1 {
+        background-color: transparent;
+        color: #000;
+      }
+      .btn-2 {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  }
+}

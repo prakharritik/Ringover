@@ -1,0 +1,16 @@
+.sizes {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  align-items: center;
+  .size {
+    width: 27px;
+    height: 27px;
+    line-height: 27px;
+    border: 2px solid #111;
+    text-align: center;
+  }
+  .head {
+    width: 50px;
+  }
+}

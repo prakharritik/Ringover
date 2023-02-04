@@ -11,17 +11,16 @@
       width: 200%;
     }
   }
-
-  .top_div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    &_icon {
-      width: 30px;
-    }
-    &_head {
-      font-size: 25px;
-      margin: 0;
-    }
+}
+.top_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &_icon {
+    width: 30px;
+  }
+  &_head {
+    font-size: 25px;
+    margin: 0;
   }
 }
