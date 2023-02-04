@@ -14,6 +14,7 @@ const Product = () => {
   console.log(id);
   const [shoe, setShoe] = useState(null);
   const [activeimg, setActiveimg] = useState(null);
+
   useEffect(() => {
     return async () => {
       const res = await axios.get(`/api/product/${id}`);

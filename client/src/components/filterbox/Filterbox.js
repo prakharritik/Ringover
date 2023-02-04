@@ -1,56 +1,85 @@
-import React from "react";
+import React, { useState } from "react";
 import { Filter } from "react-feather";
 import "./Filterbox.scss";
 
-const Filterbox = () => {
+const Filterbox = ({ filter, setFilter, handleSubmit }) => {
+  const costs = [
+    { name: "Rs. 1500-4000", gte: 1500, lte: 4000 },
+    { name: "Rs. 4001-7000", gte: 4001, lte: 7000 },
+    { name: "Rs. 7001+", gte: 7001 },
+  ];
+  const types = [
+    { name: "Loafer", type: "Loafer" },
+    { name: "Sneaker", type: "Sneaker" },
+  ];
+  const designs = [
+    { name: "2", num: 2 },
+    { name: "3", num: 3 },
+    { name: "3+", gte: 3 },
+  ];
+
+  const handleChange = (name, index) => {
+    let data = filter;
+    data[name][index] = Boolean(!data[name][index]);
+    setFilter(data);
+  };
+
   return (
     <div className="Filterbox">
       <div className="top_div">
         <p className="top_div_head">FILTERS</p>
         <Filter className="top_div_icon" />
       </div>
-      <div>
-        <p className="sub_head">Cost</p>
-        <div className="container">
-          <input class="checkbox" id="cost-checkbox-1" type="checkbox" />
-          <label for="cost-checkbox-1">Rs. 1500-4000</label>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <p className="sub_head">Cost</p>
+          {costs.map((cost, index) => (
+            <div className="container" key={index}>
+              <input
+                class="checkbox"
+                id={`cost-checkbox-${index}`}
+                type="checkbox"
+                name="cost"
+                onChange={() => handleChange("cost", index)}
+              />
+              <label for={`cost-checkbox-${index}`}>{cost.name}</label>
+            </div>
+          ))}
         </div>
-        <div className="container">
-          <input class="checkbox" id="cost-checkbox-2" type="checkbox" />
-          <label for="cost-checkbox-2">Rs. 4001-7000</label>
+        <div>
+          <p className="sub_head">Design Templates</p>
+          {designs.map((design, index) => (
+            <div className="container" key={index}>
+              <input
+                class="checkbox"
+                id={`design-checkbox-${index}`}
+                type="checkbox"
+                name="design"
+                onChange={() => handleChange("design", index)}
+              />
+              <label for={`design-checkbox-${index}`}>{design.name}</label>
+            </div>
+          ))}
         </div>
-        <div className="container">
-          <input class="checkbox" id="cost-checkbox-3" type="checkbox" />
-          <label for="cost-checkbox-3">Rs. 7001+</label>
+        <div>
+          <p className="sub_head">Type</p>
+          {types.map((type, index) => (
+            <div className="container" key={index}>
+              <input
+                class="checkbox"
+                id={`type-checkbox-${index}`}
+                type="checkbox"
+                name="type"
+                onChange={() => handleChange("type", index)}
+              />
+              <label for={`type-checkbox-${index}`}>{type.name}</label>
+            </div>
+          ))}
         </div>
-      </div>
-      <div>
-        <p className="sub_head">Design Templates</p>
-        <div className="container">
-          <input class="checkbox" id="design-checkbox-1" type="checkbox" />
-          <label for="design-checkbox-1">2</label>
-        </div>
-        <div className="container">
-          <input class="checkbox" id="design-checkbox-2" type="checkbox" />
-          <label for="design-checkbox-2">3</label>
-        </div>
-        <div className="container">
-          <input class="checkbox" id="design-checkbox-3" type="checkbox" />
-          <label for="design-checkbox-3">3+</label>
-        </div>
-      </div>
-      <div>
-        <p className="sub_head">Type</p>
-        <div className="container">
-          <input class="checkbox" id="type-checkbox-1" type="checkbox" />
-          <label for="type-checkbox-1">Loafer</label>
-        </div>
-        <div className="container">
-          <input class="checkbox" id="type-checkbox-2" type="checkbox" />
-          <label for="type-checkbox-2">Sneaker</label>
-        </div>
-      </div>
-      <button className="apply_btn">Apply</button>
+        <button type="submit" className="apply_btn">
+          Apply
+        </button>
+      </form>
     </div>
   );
 };

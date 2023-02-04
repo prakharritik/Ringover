@@ -8,17 +8,33 @@ import "./Store.scss";
 
 const Store = () => {
   const [items, setItems] = useState(null);
+  const [filters, setFilters] = useState({
+    cost: [false, false, false],
+    type: [false, false],
+    design: [false, false, false],
+  });
+  const getData = async () => {
+    const res = await axios.get("/api/product", { params: filters });
+    console.log(res);
+    setItems(res.data);
+  };
   useEffect(() => {
-    return async () => {
-      const res = await axios.get("/api/product");
-      setItems(res.data);
-    };
+    getData();
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    getData();
+  };
 
   return (
     <div class="store">
       <div class="flex-items">
-        <Filterbox />
+        <Filterbox
+          filter={filters}
+          setFilter={setFilters}
+          handleSubmit={handleSubmit}
+        />
       </div>
       <div class="flex-items">
         {items ? <Items items={items} /> : <p>Loading</p>}
