@@ -1,5 +1,6 @@
 const express = require("express");
-const Shoe = require("../../models/Shoe");
+const { Image, Shoe } = require("../../models/associations").initModels();
+
 const router = express.Router();
 
 /**
@@ -9,7 +10,13 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const shoes = await Shoe.findAll();
+    const shoes = await Shoe.findAll({
+      include: {
+        model: Image,
+        as: "images",
+        attributes: ["url", "id"],
+      },
+    });
     res.json(shoes);
   } catch (err) {
     console.log(err.message);
@@ -24,7 +31,13 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const shoe = await Shoe.findByPk(req.params.id);
+    const shoe = await Shoe.findByPk(req.params.id, {
+      include: {
+        model: Image,
+        as: "images",
+        attributes: ["url", "id"],
+      },
+    });
 
     if (!shoe) {
       return res.status(400).json({ msg: "Product not found" });
