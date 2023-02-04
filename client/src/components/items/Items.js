@@ -3,7 +3,8 @@ import { Search } from "react-feather";
 import Item from "../item/Item";
 import "./Items.scss";
 
-const Items = () => {
+const Items = ({ items }) => {
+  console.log(items);
   return (
     <div className="Items">
       <div className="top_div">
@@ -14,10 +15,9 @@ const Items = () => {
         </div>
       </div>
       <div className="items_grid">
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+        {items.map((item) => (
+          <Item key={item.id} item={item} />
+        ))}
       </div>
     </div>
   );
