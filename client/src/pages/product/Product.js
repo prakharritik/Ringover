@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Cart from "../../components/cart/Cart";
 import "./Product.scss";
 
@@ -9,12 +9,15 @@ import Size from "../../components/size/Size";
 import { NavLink, useParams } from "react-router-dom";
 import axios from "axios";
 import Loading from "../../components/loading/Loading";
+import { Context as CartContext } from "../../context/CartContext";
 
 const Product = () => {
   const { id } = useParams();
   console.log(id);
   const [shoe, setShoe] = useState(null);
   const [activeimg, setActiveimg] = useState(null);
+
+  const { addItem } = useContext(CartContext);
 
   useEffect(() => {
     return async () => {
@@ -88,7 +91,9 @@ const Product = () => {
             </div>
             <div className="btn_section">
               <button className="btn-1">Share Design</button>
-              <button className="btn-2">Add To Cart</button>
+              <button className="btn-2" onClick={() => addItem(shoe)}>
+                Add To Cart
+              </button>
             </div>
           </>
         ) : (

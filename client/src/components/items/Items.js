@@ -15,9 +15,11 @@ const Items = ({ items }) => {
         </div>
       </div>
       <div className="items_grid">
-        {items.map((item) => (
-          <Item key={item.id} item={item} />
-        ))}
+        {items.length === 0 ? (
+          <p style={{ textAlign: "center" }}>No Results</p>
+        ) : (
+          items.map((item) => <Item key={item.id} item={item} />)
+        )}
       </div>
     </div>
   );

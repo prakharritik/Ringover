@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Cart.scss";
 
-import Shoe from "../../assets/shoe.jpg";
 import { Calendar, MapPin, ShoppingBag } from "react-feather";
 import CartItem from "../cart-item/CartItem";
+import { Context as CartContext } from "../../context/CartContext";
 
 const Cart = () => {
+  const {
+    state: { items },
+    removeItem,
+  } = useContext(CartContext);
+  // console.log(items);
   return (
     <div className="Cart">
       <div className="top_div">
@@ -13,11 +18,13 @@ const Cart = () => {
         <ShoppingBag className="top_div_icon" />
       </div>
       <div className="cart_items">
-        {/* <div className="empty_cart">
-          <p>What's stopping you, designer?</p>
-        </div> */}
-        <CartItem />
-        <CartItem />
+        {items.length === 0 ? (
+          <div className="empty_cart">
+            <p>What's stopping you, designer?</p>
+          </div>
+        ) : (
+          items.map((item) => <CartItem item={item} removeItem={removeItem} />)
+        )}
       </div>
       <div>
         <div className="order_details">
