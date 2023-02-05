@@ -63,8 +63,9 @@ const loadUser = async (dispatch) => {
   } catch (err) {
     dispatch({
       type: "add_error",
-      payload: "Something went wrong.",
+      payload: err.response.data.errors[0].msg,
     });
+    setTimeout(() => dispatch({ type: "clear_error_message" }), 5000);
   }
 };
 
@@ -78,12 +79,13 @@ const signin = (dispatch) => {
         payload: response.data.token,
       });
       loadUser(dispatch);
-      console.log("hi");
     } catch (err) {
+      console.log(err.response.data.errors[0].msg);
       dispatch({
         type: "add_error",
-        payload: "Something went wrong with signin.",
+        payload: err.response.data.errors[0].msg,
       });
+      setTimeout(() => dispatch({ type: "clear_error_message" }), 5000);
     }
   };
 };

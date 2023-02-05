@@ -20,6 +20,7 @@ import { Context as AuthContext } from "./context/AuthContext";
 import { useContext, useEffect } from "react";
 import setAuthToken from "./setAuthToken";
 import Login from "./components/register/Login";
+import Alert from "./components/alert/Alert";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -37,6 +38,7 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
+        <Alert />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/journey" element={<Journey />} />
