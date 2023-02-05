@@ -47,3 +47,11 @@ https://e-commerce-yapj.onrender.com/
 ![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675611074/samples/Screenshot_64_cniaws.png)
 
 ![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675611075/samples/Screenshot_65_ylg8m0.png)
+
+### Team Page
+
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675615336/samples/Screenshot_55_j1y8pf.png)
+
+### The Journey Page
+
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675615337/samples/Screenshot_54_x6gebe.png)
