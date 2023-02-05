@@ -1,70 +1,57 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# E-Commerce
 
-## Available Scripts
+Made for Ringover full stack intern assignment.
 
-In the project directory, you can run:
+## Demo
 
-### `npm start`
+https://e-commerce-yapj.onrender.com/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Screenshots
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Store page
 
-### `npm test`
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675611075/samples/Screenshot_56_vjm3br.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Product page
 
-### `npm run build`
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675611075/samples/Screenshot_57_t6wg9v.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Cart with Items
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675611074/samples/Screenshot_58_eesiln.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Contact page
 
-### `npm run eject`
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675611074/samples/Screenshot_59_yll5hz.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Login page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675611073/samples/Screenshot_60_pmx1kz.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### After Authentication
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675611074/samples/Screenshot_61_ep3ggd.png)
 
-## Learn More
+### Store page in small screen
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675611074/samples/Screenshot_62_suxlpw.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Toggle filter component in small screen (Store Page)
 
-### Code Splitting
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675611074/samples/Screenshot_63_qmy5q4.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Product page in small screen
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675611074/samples/Screenshot_64_cniaws.png)
 
-### Making a Progressive Web App
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675611075/samples/Screenshot_65_ylg8m0.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Team Page
 
-### Advanced Configuration
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675615336/samples/Screenshot_55_j1y8pf.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### The Journey Page
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![App Screenshot](https://res.cloudinary.com/ddkjlbzg2/image/upload/v1675615337/samples/Screenshot_54_x6gebe.png)
