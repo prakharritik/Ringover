@@ -88,7 +88,7 @@
         color: #111;
       }
 
-      &.active::after {
+      &.active-link::after {
         content: "";
         background: black;
         position: absolute;
@@ -108,7 +108,7 @@
   width: 40px;
   padding: 0.5rem;
   border-radius: 50%;
-  background-color: #283b8b;
+  background-color: #000000;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   // positions the icon to the right and center aligns it vertically
@@ -121,10 +121,25 @@
     background-color: #2642af;
   }
 }
-
+@media screen and (max-width: 1000px) {
+  .brand-name {
+    width: 15%;
+  }
+  .navigation-menu {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
+  }
+  .navigation {
+    padding: 10px;
+  }
+
+  .navigation-menu {
+    margin-right: 18%;
+    justify-content: flex-end;
   }
 
   .navigation-menu ul {
@@ -136,7 +151,8 @@
     flex-direction: column;
     // makes menu span full height and width
     width: 100%;
-    height: calc(100vh - 77px);
+    z-index: 24;
+    height: calc(50vh - 77px);
     background-color: white;
     border-top: 1px solid black;
   }
@@ -144,6 +160,13 @@
     // centers link text and strips off margin
     text-align: center;
     margin: 0;
+    background-color: #fff;
+    &.active-link {
+      background-color: #010101;
+      a {
+        color: #fff !important;
+      }
+    }
   }
   .navigation-menu li a {
     color: black;
@@ -151,14 +174,20 @@
     width: 100%;
     padding: 1.5rem 0;
   }
-  .navigation-menu li:hover {
-    background-color: #eee;
-  }
+
   .navigation-menu ul {
     /* previous styles */
     display: none;
   }
   .navigation-menu.expanded ul {
     display: block;
+  }
+  .dropdown-content {
+    width: 90%;
+    left: 5%;
+    font-size: 20px;
+    a {
+      text-align: center;
+    }
   }
 }

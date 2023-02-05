@@ -6,9 +6,12 @@ import Filterbox from "../../components/filterbox/Filterbox";
 import Items from "../../components/items/Items";
 import "./Store.scss";
 import Loading from "../../components/loading/Loading";
+import { Filter, ShoppingCart } from "react-feather";
 
 const Store = () => {
   const [items, setItems] = useState(null);
+  const [filterShow, setFilterShow] = useState(false);
+  const [cartShow, setCartShow] = useState(false);
   const [filters, setFilters] = useState({
     cost: [false, false, false],
     type: [false, false],
@@ -29,18 +32,34 @@ const Store = () => {
   };
 
   return (
-    <div class="store">
-      <div class="flex-items">
+    <div className="store">
+      <div className="flex-items filterbar">
+        <Filter
+          onClick={() => {
+            setFilterShow(!filterShow);
+            setCartShow(false);
+          }}
+        />
+        <ShoppingCart
+          onClick={() => {
+            setCartShow(!cartShow);
+            setFilterShow(false);
+          }}
+        />
+      </div>
+      <div
+        className={`flex-items ${filterShow ? "show_filter" : "hide_filter"}`}
+      >
         <Filterbox
           filter={filters}
           setFilter={setFilters}
           handleSubmit={handleSubmit}
         />
       </div>
-      <div class="flex-items">
+      <div className="flex-items">
         {items ? <Items items={items} /> : <Loading />}
       </div>
-      <div class="flex-items">
+      <div className={`flex-items ${cartShow ? "show_cart" : "hide_cart"}`}>
         <Cart />
       </div>
     </div>

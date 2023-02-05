@@ -7,8 +7,11 @@
     -webkit-box-shadow: 0px 0px 10px 2px rgba(128, 128, 128, 0.43);
     -moz-box-shadow: 0px 0px 10px 2px rgba(128, 128, 128, 0.43);
     box-shadow: 0px 0px 10px 2px rgba(128, 128, 128, 0.43);
-    &:nth-child(2) {
+    &:nth-child(3) {
       width: 200%;
+    }
+    &.filterbar {
+      display: none;
     }
   }
 }
@@ -22,5 +25,38 @@
   &_head {
     font-size: 25px;
     margin: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .store {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    .flex-items {
+      &:nth-child(3) {
+        order: 2;
+      }
+      &:nth-child(3) {
+        order: 4;
+        width: 100%;
+      }
+      &.filterbar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        box-shadow: none;
+      }
+    }
+    .show_cart,
+    .show_filter {
+      display: block;
+    }
+    .hide_cart,
+    .hide_filter {
+      display: none;
+    }
   }
 }

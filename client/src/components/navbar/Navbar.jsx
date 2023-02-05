@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Logo from "../../assets/logo.png";
-import { User } from "react-feather";
+import { Menu, User } from "react-feather";
 import { NavLink, useLocation } from "react-router-dom";
 import "./Navbar.scss";
 import { Context as AuthContext } from "../../context/AuthContext";
@@ -25,7 +25,7 @@ function Navbar() {
           setIsNavExpanded(!isNavExpanded);
         }}
       >
-        {/* hamburger svg code... */}
+        <Menu color="white" />
       </button>
       <div
         className={
@@ -33,19 +33,19 @@ function Navbar() {
         }
       >
         <ul>
-          <li className={` ${pathname === "/" ? "active" : null}`}>
+          <li className={` ${pathname === "/" ? "active-link" : null}`}>
             <NavLink to="/">HOME</NavLink>
           </li>
-          <li className={` ${pathname === "/journey" ? "active" : null}`}>
+          <li className={` ${pathname === "/journey" ? "active-link" : null}`}>
             <NavLink to="/journey">THE JOURNEY</NavLink>
           </li>
-          <li className={` ${pathname === "/team" ? "active" : null}`}>
+          <li className={` ${pathname === "/team" ? "active-link" : null}`}>
             <NavLink to="/team">TEAM</NavLink>
           </li>
-          <li className={` ${pathname === "/store" ? "active" : null}`}>
+          <li className={` ${pathname === "/store" ? "active-link" : null}`}>
             <NavLink to="/store">STORE</NavLink>
           </li>
-          <li className={` ${pathname === "/contact" ? "active" : null}`}>
+          <li className={` ${pathname === "/contact" ? "active-link" : null}`}>
             <NavLink to="/contact">CONTACT</NavLink>
           </li>
         </ul>
