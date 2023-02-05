@@ -1,9 +1,15 @@
+require("dotenv").config();
 const { Sequelize } = require("sequelize");
-
-const sequelize = new Sequelize("ringer", "root", "", {
-  host: "localhost",
-  dialect: "mysql",
-});
+console.log(process.env.dbname, process.env.dbuser, process.env.dbpass);
+const sequelize = new Sequelize(
+  process.env.dbname,
+  process.env.dbuser,
+  process.env.dbpass,
+  {
+    host: process.env.dbhost,
+    dialect: "mysql",
+  }
+);
 
 async function connectDB() {
   try {
