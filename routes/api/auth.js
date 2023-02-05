@@ -6,6 +6,22 @@ require("dotenv").config();
 const { check, validationResult } = require("express-validator");
 
 const User = require("../../models/User");
+const auth = require("../../middlewares/auth");
+
+/**
+ * GET at "/api/auth"
+ * Get User Data
+ */
+
+router.get("/", auth, async (req, res) => {
+  try {
+    const user = await User.findByPk(req.user.id, { attributes: ["name"] });
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
 
 /**
  * POST at "/api/auth"

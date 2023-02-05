@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Logo from "../../assets/logo.png";
 import { User } from "react-feather";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Navbar.scss";
+import { Context as AuthContext } from "../../context/AuthContext";
 
 function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   let { pathname } = useLocation();
-  console.log(pathname);
+
+  const {
+    state: { token, user },
+    signout,
+  } = useContext(AuthContext);
 
   return (
     <nav className="navigation">
-      <a href="/" className="brand-name">
+      <NavLink to="/" className="brand-name">
         <img src={Logo} />
-      </a>
+      </NavLink>
       <button
         className="hamburger"
         onClick={() => {
@@ -29,31 +34,36 @@ function Navbar() {
       >
         <ul>
           <li className={` ${pathname === "/" ? "active" : null}`}>
-            <a href="/">HOME</a>
+            <NavLink to="/">HOME</NavLink>
           </li>
           <li className={` ${pathname === "/journey" ? "active" : null}`}>
-            <a href="/journey">THE JOURNEY</a>
+            <NavLink to="/journey">THE JOURNEY</NavLink>
           </li>
           <li className={` ${pathname === "/team" ? "active" : null}`}>
-            <a href="/team">TEAM</a>
+            <NavLink to="/team">TEAM</NavLink>
           </li>
           <li className={` ${pathname === "/store" ? "active" : null}`}>
-            <a href="/store">STORE</a>
+            <NavLink to="/store">STORE</NavLink>
           </li>
           <li className={` ${pathname === "/contact" ? "active" : null}`}>
-            <a href="/contact">CONTACT</a>
+            <NavLink to="/contact">CONTACT</NavLink>
           </li>
         </ul>
 
-        <div class="dropdown">
-          <button class="dropbtn">
+        <div className="dropdown">
+          <button className="dropbtn">
             <User size={20} />
-            GAGAN
+            {user ? user.name : null}
           </button>
-          <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+          <div className="dropdown-content">
+            {token ? (
+              <a onClick={signout}>Logout</a>
+            ) : (
+              <>
+                <NavLink to="/login">Login</NavLink>
+                <NavLink to="/register">Register</NavLink>
+              </>
+            )}
           </div>
         </div>
       </div>
